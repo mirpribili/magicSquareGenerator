@@ -28,22 +28,15 @@
 git clone https://github.com/yourusername/magic-square-generator.git
 cd magic-square-generator
 
-text
-
 2. Соберите проект:
 mvn clean install
-
-text
 
 3. Запустите REST API:
 mvn spring-boot:run
 
-text
 
 4. Запустите Swing UI (если нужно):
 java -cp target/magic-square-generator.jar org.example.magicsquaregenerator.ui.MagicSquareUI
-
-text
 
 ---
 
@@ -53,8 +46,6 @@ POST-запрос на `/api/magicsquare/generate` с JSON телом:
 {
 "numbers":
 }
-
-text
 
 ---
 
