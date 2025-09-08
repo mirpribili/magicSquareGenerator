@@ -93,15 +93,15 @@ public class MagicSquareGeneratorImpl implements MagicSquareGenerator {
             square[0][0] = x;
             square[2][2] = y;
 
-            int W = magicSum - square[0][0] - square[0][2]; // сумма по первой строке минус x и a
-            int M = magicSum - square[0][0] - square[2][0]; // сумма по первому столбцу минус x и c
-            int N = magicSum - square[2][0] - square[2][2]; // сумма по третьей строке минус c и y
-            int R = magicSum - square[0][2] - square[2][2]; // сумма по третьему столбцу минус a и y
+            int up = magicSum - square[0][0] - square[0][2]; // сумма по первой строке минус x и a
+            int left = magicSum - square[0][0] - square[2][0]; // сумма по первому столбцу минус x и c
+            int down = magicSum - square[2][0] - square[2][2]; // сумма по третьей строке минус c и y
+            int right = magicSum - square[0][2] - square[2][2]; // сумма по третьему столбцу минус a и y
 
-            square[0][1] = W;
-            square[1][0] = M;
-            square[2][1] = N;
-            square[1][2] = R;
+            square[0][1] = up;
+            square[1][0] = left;
+            square[2][1] = down;
+            square[1][2] = right;
             if (!Arrays.stream(square)
                     .flatMapToInt(Arrays::stream)
                     .anyMatch(value -> value <= 0) && isMagic(square, magicSum)) {
